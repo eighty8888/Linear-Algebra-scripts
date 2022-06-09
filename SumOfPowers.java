@@ -1,0 +1,47 @@
+import java.util.*;
+public class SumOfPowers {
+	public static void main(String[] args) {
+		double[][] matrixD = {
+				{0.4, -0.3},
+				{-0.2, 0.5}
+		};
+		double[][] sum = {
+				{1, 0},
+				{0, 1}
+		};
+		int power = 100;
+		double[][] temp = {
+				{0.4, -0.3},
+				{-0.2, 0.5}
+		};
+		for (int i = 1; i <= power; i++) {
+			DtoPowerOf(i, matrixD, temp);
+			for (int j = 0; j < matrixD.length; j++) {
+				for (int k = 0; k < matrixD[j].length; k++) {
+					sum[j][k] += matrixD[j][k];
+				}
+			}
+		}
+		System.out.println(Arrays.deepToString(sum));
+	}
+	public static double[][] DtoPowerOf(int exp, double[][] D, double[][] temp){
+		if (exp == 1) {
+			return D;
+		}else {
+			double[][] dupli = new double[D.length][D.length];
+			for (int r = 0; r < D.length; r++) {
+				for (int c = 0; c < D[r].length; c++) {
+					for (int j = 0; j < D[r].length; j++) {
+						dupli[r][c] += D[r][j] * temp[j][c];
+					}
+				}
+			}
+			for (int i = 0; i < D.length; i++) {
+				for (int j = 0; j < D.length; j++) {
+					D[i][j] = dupli[i][j];
+				}
+			}
+		}
+		return D;
+	}
+}
