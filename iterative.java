@@ -36,7 +36,7 @@ public class iterative {
 				for (int i = 0; i < x.length; i++) {
 					System.out.println("x" + (i + 1) + " = " + x[i]);
 				}
-				System.out.println();
+				System.out.println()
 			}else {
 				System.out.println("Iteration " + count);
 				System.out.println("This is the column vector: " + Arrays.toString(x));
