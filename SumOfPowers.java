@@ -1,19 +1,26 @@
 import java.util.*;
 public class SumOfPowers {
 	public static void main(String[] args) {
-		double[][] matrixD = {
-				{0.4, -0.3},
-				{-0.2, 0.5}
-		};
+		System.out.println("How large is matrix D? (square matrix) ");
+		int size = input.nextInt();
+		System.out.println("Enter matrix D: ");
+		double[][] matrixD = new double[size][size];
+		for (int i = 0; i < matrixD.length; i++) {
+			for (int j = 0; j < matrixD[i].length; j++) {
+				matrixD[i][j] = input.nextDouble();
+			}
+		}
 		double[][] sum = {
 				{1, 0},
 				{0, 1}
 		};
 		int power = 100;
-		double[][] temp = {
-				{0.4, -0.3},
-				{-0.2, 0.5}
-		};
+		double[][] temp = new double[size][size];
+		for (int i = 0; i < matrixD.length; i++) {
+			for (int j = 0; j < matrixD[i].length; j++) {
+				temp[i][j] = matrixD[i][j];
+			}
+		}
 		for (int i = 1; i <= power; i++) {
 			DtoPowerOf(i, matrixD, temp);
 			for (int j = 0; j < matrixD.length; j++) {
