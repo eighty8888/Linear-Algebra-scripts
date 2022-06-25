@@ -2,20 +2,22 @@ import java.util.*;
 public class LeontiefModel {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		System.out.println("How large is matrix D? (square matrix) ");
+		int size = input.nextInt();
 		System.out.println("Enter matrix D: ");
-		double[][] matrixD = new double[3][3];
+		double[][] matrixD = new double[size][size];
 		for (int i = 0; i < matrixD.length; i++) {
 			for (int j = 0; j < matrixD[i].length; j++) {
 				matrixD[i][j] = input.nextDouble();
 			}
 		}
 		System.out.println("Enter the initial guess vector x: ");
-		double[] x = new double[3];
+		double[] x = new double[size];
 		for (int i = 0; i < x.length; i++) {
 			x[i] = input.nextDouble();
 		}
 		System.out.println("Enter the constant vector c: ");
-		double[] c = new double[3];
+		double[] c = new double[size];
 		for (int i = 0; i < c.length; i++) {
 			c[i] = input.nextDouble();
 		}
