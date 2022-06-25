@@ -1,24 +1,24 @@
 import java.util.*;
-public class iterative {
+public class LeontiefModel {
 	public static void main(String[] args) {
-		double[][] matrixD = 
-			{
-			{0, -(1.0/2.0), -(1.0/6.0)},
-			{-(2.0/5.0), 0, -(2.0/5.0)},
-			{-(1.0/4.0), -(1.0/4.0), 0}
-			};
-		double[] x = 
-			{
-			100, 
-			100, 
-			100
-			};
-		double[] c = 
-			{
-			(5/2.0), 
-			10, 
-			(5/2.0)
-			};
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter matrix D: ");
+		double[][] matrixD = new double[3][3];
+		for (int i = 0; i < matrixD.length; i++) {
+			for (int j = 0; j < matrixD[i].length; j++) {
+				matrixD[i][j] = input.nextDouble();
+			}
+		}
+		System.out.println("Enter the initial guess vector x: ");
+		double[] x = new double[3];
+		for (int i = 0; i < x.length; i++) {
+			x[i] = input.nextDouble();
+		}
+		System.out.println("Enter the constant vector c: ");
+		double[] c = new double[3];
+		for (int i = 0; i < c.length; i++) {
+			c[i] = input.nextDouble();
+		}
 		double[] temp = Arrays.copyOf(x, x.length);
 		int count = 0;
 		do {
@@ -46,7 +46,6 @@ public class iterative {
 				System.out.println();
 			}
 			count += 1;
-//			System.out.println(Arrays.toString(temp));
 		}while (norm(temp, x) >= Math.pow(10, -6));
 	}
 	public static double norm(double[] temp, double[] x) {
