@@ -47,6 +47,7 @@ public class LeontiefModel {
 			}
 			count += 1;
 		}while (norm(temp, x) >= Math.pow(10, -6));
+		input.close();
 	}
 	public static double norm(double[] temp, double[] x) {
 		double[] diff = new double[x.length];
